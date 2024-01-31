@@ -1,19 +1,32 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import Navbar from './Components/Navbar';
+import MovieList from './Pages/MovieList';
+import MovieDetails from './Pages/MovieDetails';
+import FavoriatePage from './Pages/FavoriatePage';
+import NotFound from './Pages/NotFound';
 
 function App() {
+
+
   return (
 
     <BrowserRouter>
     <Navbar /> 
     <Switch>
-    <Route exact path={"/"} component={Home} />
-    <Route exact path={"/movelist"} component={UsersData} />
-    <Route exact path={"/movelist"} component={UsersData} />
-    <Route exact path={"/user/:id"} component={UserDetails} />
+    <Route exact path={"/"} component={MovieList} />
+    <Route exact path={"/moviedata/:id"} component={MovieDetails} />
+    <Route exact path={"/favoriate"} component={FavoriatePage} />
     <Route exact path={"*"} component={NotFound}/>
-    </Switch>
+
+    </Switch>    
     </BrowserRouter>
+
+      
+    
   );
 }
 
