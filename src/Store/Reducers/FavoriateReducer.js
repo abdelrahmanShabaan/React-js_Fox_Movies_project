@@ -13,7 +13,7 @@ const FavoriateReducer = (state=INITIAL_VALUE, action) => {
         case 'ADD_TO_FAVORIATE':
             return{
                 ...state, //everything
-                favoriate: action.payload
+                favoriate: [...state.favoriate, action.payload]
             }
 
             default: 

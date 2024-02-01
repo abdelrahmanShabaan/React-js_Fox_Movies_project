@@ -8,6 +8,10 @@
     padding: 1.5rem;
     background-color: rgb(50, 50, 103);    
 }
+
+.container{
+    margin-top: 0.5rem;
+}
 .movies{
 
     margin-top: 1rem;
@@ -32,8 +36,14 @@
 
 .search_box {
     display: flex;
+    width: 81%;
     align-items: center;
     justify-content: center;
     
 }
 
+
+.input_style{
+    background-color:gold;
+    
+}

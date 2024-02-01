@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { favoriateActionFunction } from '../Store/Actions/FavoriateAction';
+import { FaHeart } from "react-icons/fa";
 
 function MovieCard(props) {
 
@@ -33,10 +34,19 @@ function MovieCard(props) {
 
             const addToFav = () =>{
                 // //dispatch action with action name useDispatch
-                // dispatch(changeLanguage(lang === "EN" ? "AR" : "EN")) 
-                dispatch(favoriateActionFunction(props))
+                const isAlreadyAdded = favoriaters.some((favorite) => favorite.id === props.id);
+
+                //if condition if it's added 
+                if (isAlreadyAdded) {
+                    alert("This item is already in favorites!");
+                } else {
+                    // Dispatch action to add the item to favorites
+                    dispatch(favoriateActionFunction(props))
+                }
                 
             }
+
+            
 
 
     return(
@@ -48,13 +58,13 @@ function MovieCard(props) {
             </div>    
             <div className='info'>
               <p className='title'>{props.title}</p> 
-                <p className='vote'>{props.vote_average}</p>
+                <p className='vote'>Vote:{props.vote_average}</p>
             </div>
 
             <div className='oveview'>
             <Link to={`/moviedata/${props.id}`}>  <button className='btn btn-priamry title_overview'>Overview</button> </Link>
-            <button className="btn btn-primary title_overview" onClick={() => addToFav()}>Add to Favoriate</button>
-             <h3 className='overview_info'>{props.overview}</h3>  
+            <button className="btn btn-outline-danger favbut " onClick={() => addToFav()}>Add To : <FaHeart /></button>
+
             </div>
     </div>
     </>

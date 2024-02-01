@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import MovieCard from "../Components/MovieCard";
 import './MovieList.css';
+import React from 'react';
 
 
 
@@ -42,11 +43,10 @@ function MovieList(){
     return(
         <>
         
-            <div className="container">
-                
+            <div className="container">  
                 <div className='search_box'>
                     <form class="form-control" onSubmit={handleSearch}>
-                    <input class="form-control" onChange={(e) => setTerm(e.target.value) } type="search" placeholder="Search for Movies" aria-label="Search"/>
+                    <input class="form-control input_style" onChange={(e) => setTerm(e.target.value) } type="search" placeholder="Search for Movies" aria-label="Search"/>
                     </form>
                 </div>
                     <div className='movies'>

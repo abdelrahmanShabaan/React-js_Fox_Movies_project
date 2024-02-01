@@ -9,6 +9,7 @@ const INITIAL_STATE = {
 const RemoveReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'REMOVE_FROM_FAVORITES':
+
             const nowRemoveFavorites = state.favoriate.filter(movie => movie.id !== action.payload);
 
             localStorage.setItem('favorites', JSON.stringify(nowRemoveFavorites));
@@ -16,6 +17,8 @@ const RemoveReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 deletefavoriate : nowRemoveFavorites, 
+                
+                
             };
 
         default:

@@ -14,7 +14,8 @@ const FavoriatePage = () => {
       //--------handle delete movie------------//
       const dispatch = useDispatch();
         
-      const handleRemove = (movieId) => {
+      const handleRemove = (event, movieId) => {
+        event.preventDefault(); // Prevents the default behavior of the button click
         dispatch(RemoveActionFunction(movieId));
       };
 
@@ -28,7 +29,7 @@ const FavoriatePage = () => {
         <h5 className="card-title">{movie.title}</h5>
         </div>
         </div>
-        <button className='btn btn-danger' onClick={() => handleRemove(movie.id)}>Remove</button>
+        <button className='btn btn-danger' onClick={(event) => handleRemove(event, movie.id)}>Remove</button>
     </div>
 
     

@@ -20,6 +20,7 @@ function App() {
     <Route exact path={"/"} component={MovieList} />
     <Route exact path={"/moviedata/:id"} component={MovieDetails} />
     <Route exact path={"/favoriate"} component={FavoriatePage} />
+    <Route exact path={"/home"} component={MovieList} />
     <Route exact path={"*"} component={NotFound}/>
 
     </Switch>    

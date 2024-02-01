@@ -1,10 +1,11 @@
 
 import './CartForOne.css';
-
+import React from 'react';
 
 function CartForOneData(props){
 
 
+    //try to handle image
     const API_IMG = "https://image.tmdb.org/t/p/w500"
 
 
