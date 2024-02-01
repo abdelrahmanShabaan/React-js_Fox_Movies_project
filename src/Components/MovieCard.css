@@ -37,6 +37,11 @@
 
 
 }
+.title_overview{
+    background-color:#ff0000;
+    text-align:center;
+    width:100%
+}
 
 .card:hover .oveview {
     transform: translateY(0%);
