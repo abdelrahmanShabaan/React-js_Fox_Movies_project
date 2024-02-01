@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { favoriateActionFunction } from "../Store/Actions/FavoriateAction";
 
 function Navbar() {
 
+    const favoritesCount = useSelector((state) => state.favoriate.favoriate.length);
+
     
-  
     return (
         <>
        <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -15,12 +18,13 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <Link className="nav-link" to="/moviedata">Movies data</Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <Link className="nav-link" to="/favoriate">Favoriate</Link>
                     </li>
+                    <li className="nav-item">Favorites: {favoritesCount}</li>
                </ul>
 
                </div>

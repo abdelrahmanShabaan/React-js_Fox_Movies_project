@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './MovieCard.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { favoriateActionFunction } from '../Store/Actions/FavoriateAction';
 
 function MovieCard(props) {
 
@@ -22,7 +24,19 @@ function MovieCard(props) {
                 .catch((err) => console.log(err));
             },[])
 
+        
+            //--------------------------- start handle favoriate icon -------------------------------//
 
+            const favoriaters = useSelector((state) => state.favoriate.favoriate) 
+
+            const dispatch = useDispatch()
+
+            const addToFav = () =>{
+                // //dispatch action with action name useDispatch
+                // dispatch(changeLanguage(lang === "EN" ? "AR" : "EN")) 
+                dispatch(favoriateActionFunction(props))
+                
+            }
 
 
     return(
@@ -39,6 +53,7 @@ function MovieCard(props) {
 
             <div className='oveview'>
             <Link to={`/moviedata/${props.id}`}>  <button className='btn btn-priamry title_overview'>Overview</button> </Link>
+            <button className="btn btn-primary title_overview" onClick={() => addToFav()}>Add to Favoriate</button>
              <h3 className='overview_info'>{props.overview}</h3>  
             </div>
     </div>
