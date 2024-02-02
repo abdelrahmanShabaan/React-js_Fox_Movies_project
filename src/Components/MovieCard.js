@@ -63,7 +63,7 @@ function MovieCard(props) {
 
             <div className='oveview'>
             <Link to={`/moviedata/${props.id}`}>  <button className='btn btn-priamry title_overview'>Overview</button> </Link>
-            <button className="btn btn-outline-danger favbut " onClick={() => addToFav()}>Add To : <FaHeart /></button>
+            <button className="btn btn-outline-danger favbut " onClick={() => addToFav()}>add To <FaHeart /></button>
 
             </div>
     </div>

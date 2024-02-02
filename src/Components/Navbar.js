@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { favoriateActionFunction } from "../Store/Actions/FavoriateAction";
 import './NavbarStyle.css';
 import { FaHeart, FaHeartbeat, FaRegHeart } from "react-icons/fa";
+import axios from "axios";
 
 function Navbar() {
 
     const favoritesCount = useSelector((state) => state.favoriate.favoriate.length);
+
+    
+   
 
     return (
         <> 
@@ -26,8 +30,8 @@ function Navbar() {
                     <Link className="nav-link" to="/favoriate" style={{ color: 'white' }}>Favoriate</Link>
                     </li>
                     <li className="fav" style={{ color: 'red' }}>  <FaRegHeart /> {favoritesCount}</li>
+                    
                </ul>
-
                </div>
            </div>
          </nav>
