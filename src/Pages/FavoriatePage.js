@@ -1,4 +1,3 @@
-// FavoritesPage.js
 import React from 'react';
 import './FavoriateCss.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,16 +19,17 @@ const FavoriatePage = () => {
       };
 
   return (
-    <div>
+    <div className='container'> 
+            <h1 className="text-center text-dark texto"> Your Favoriate Movies</h1>
+
       {favorites.map((movie) => (
     <div key={movie.id}>
         <div className="card" style={{ display: "flex", flexWrap: "wrap" }}>
         <img className='card-img' src={movie.poster_path ? API_IMG + movie.poster_path : "https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />
         <div className="card-body">
-        <h5 className="card-title">{movie.title}</h5>
+        <button className='btn btn-danger' style={{width : '100%' }} onClick={(event) => handleRemove(event, movie.id)}>Remove</button>
         </div>
         </div>
-        <button className='btn btn-danger' onClick={(event) => handleRemove(event, movie.id)}>Remove</button>
     </div>
 
     

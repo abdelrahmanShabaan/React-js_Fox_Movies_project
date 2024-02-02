@@ -6,6 +6,7 @@ export const favoriateActionFunction = (payload) =>{
 
     //----------------start handle localstorage --------------//
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+   
     const updatedFavorites = [
         
         ...favorites,
