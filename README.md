@@ -1,3 +1,5 @@
+![project](https://github.com/abdelrahmanShabaan/React-js_Fox_Movies_project/assets/48605080/445abf1f-7aab-40a9-b622-210b46e018c9)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
